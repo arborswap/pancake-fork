@@ -28,7 +28,7 @@ export const useCurrentFarmAuction = (account: string) => {
         const auctionData = await farmAuctionContract.auctions(auctionId)
         const processedAuctionData = await processAuctionData(auctionId.toNumber(), auctionData)
         setCurrentAuction(processedAuctionData)
-      } catch (error) {
+      } catch (error: any) {
         console.error('Failed to fetch current auction', error)
       }
     }
@@ -46,7 +46,7 @@ export const useCurrentFarmAuction = (account: string) => {
         )
         const sortedBidders = sortAuctionBidders(currentAuctionBidders, currentAuction)
         setBidders(sortedBidders)
-      } catch (error) {
+      } catch (error: any) {
         console.error('Failed to fetch bidders', error)
       }
     }
@@ -64,7 +64,7 @@ export const useCurrentFarmAuction = (account: string) => {
           account,
           isWhitelisted: whitelistedStatus,
         })
-      } catch (error) {
+      } catch (error: any) {
         console.error('Failed to check if account is whitelisted', error)
       }
     }

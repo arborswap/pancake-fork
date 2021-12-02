@@ -70,8 +70,8 @@ const PreviousRoundCardFooter: React.FC<{ lotteryData: LotteryRound; lotteryId: 
           <Flex>
             <Text fontSize="14px" display="inline">
               {t('Total players this round')}:{' '}
-              {lotteryData && lotteryGraphData.totalUsers ? (
-                lotteryGraphData.totalUsers.toLocaleString()
+              {lotteryData && lotteryGraphData?.totalUsers ? (
+                lotteryGraphData?.totalUsers?.toLocaleString()
               ) : (
                 <Skeleton height={14} width={31} />
               )}

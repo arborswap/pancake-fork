@@ -3,7 +3,7 @@ import omitBy from 'lodash/omitBy'
 import erc20ABI from 'config/abi/erc20.json'
 import tokens from 'config/constants/tokens'
 import { Token } from 'config/constants/types'
-import multicall from 'utils/multicall'
+import { multicall } from 'utils/multicall'
 
 // remove TLOS because it's not a Bep20 token
 const tokensToTest = omitBy(

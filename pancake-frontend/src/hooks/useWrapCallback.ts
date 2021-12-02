@@ -73,7 +73,7 @@ export default function useWrapCallback(
                   const txReceipt = await wethContract.deposit({ value: `0x${inputAmount.raw.toString(16)}` })
                   addTransaction(txReceipt, { summary: `Wrap ${inputAmount.toSignificant(6)} TLOS to WTLOS` })
                   return {}
-                } catch (error) {
+                } catch (error: any) {
                   console.error('Could not deposit', error)
                   return {}
                 }
@@ -113,7 +113,7 @@ export default function useWrapCallback(
                   const txReceipt = await wethContract.withdraw(`0x${inputAmount.raw.toString(16)}`)
                   addTransaction(txReceipt, { summary: `Unwrap ${inputAmount.toSignificant(6)} WTLOS to TLOS` })
                   return {}
-                } catch (error) {
+                } catch (error: any) {
                   console.error('Could not withdraw', error)
                   return {}
                 }

@@ -2,7 +2,7 @@
 import BigNumber from 'bignumber.js'
 import pools from 'config/constants/pools'
 import sousChefV2 from 'config/abi/sousChefV2.json'
-import multicall from '../multicall'
+import { multicall } from '../multicall'
 import { simpleRpcProvider } from '../providers'
 import { getAddress } from '../addressHelpers'
 

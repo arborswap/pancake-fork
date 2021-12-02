@@ -31,7 +31,7 @@ const ConnectWalletButton = (props) => {
               console.error('Error when create eth account from Telos account', err)
               toastError('Something went wrong during the creation of the EVM account.')
             })
-        } catch (error) {
+        } catch (error: any) {
           console.error('Error when create eth account from Telos account: ', error)
         }
       }

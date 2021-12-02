@@ -29,7 +29,7 @@ export const viewUserInfoForLotteryId = async (
   try {
     const data = await lotteryContract.viewUserInfoForLotteryId(account, lotteryId, cursor, perRequestLimit)
     return processRawTicketsResponse(data)
-  } catch (error) {
+  } catch (error: any) {
     console.error('viewUserInfoForLotteryId', error)
     return null
   }

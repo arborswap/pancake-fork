@@ -30,7 +30,7 @@ export const getSettings = (account: string): UserSettings => {
   try {
     const settingsFromLs = localStorage.getItem(getStorageKey(account))
     return settingsFromLs ? JSON.parse(settingsFromLs) : getDefaultSettings()
-  } catch (error) {
+  } catch (error: any) {
     return getDefaultSettings()
   }
 }

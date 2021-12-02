@@ -104,7 +104,7 @@ const PlaceBidModal: React.FC<PlaceBidModalProps> = ({
           const response = await cakeContract.allowance(account, farmAuctionContract.address)
           const currentAllowance = ethersToBigNumber(response)
           return currentAllowance.gt(0)
-        } catch (error) {
+        } catch (error: any) {
           return false
         }
       },

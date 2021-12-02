@@ -120,7 +120,7 @@ const IfoFoldableCard: React.FC<IfoFoldableCardProps> = ({ ifo, publicIfoData, w
         t('Successfully Enabled!'),
         t('You can now participate in the %symbol% IFO.', { symbol: ifo.token.symbol }),
       )
-    } catch (error) {
+    } catch (error: any) {
       setEnableStatus(EnableStatus.DISABLED)
     }
   }
@@ -131,7 +131,7 @@ const IfoFoldableCard: React.FC<IfoFoldableCardProps> = ({ ifo, publicIfoData, w
         const response = await raisingTokenContract.allowance(account, contract.address)
         const currentAllowance = new BigNumber(response.toString())
         setEnableStatus(currentAllowance.lte(0) ? EnableStatus.DISABLED : EnableStatus.ENABLED)
-      } catch (error) {
+      } catch (error: any) {
         setEnableStatus(EnableStatus.DISABLED)
       }
     }

@@ -101,18 +101,18 @@ export default function Updater(): null {
                         )
                       })
                     })
-                    .catch((error) => {
+                    .catch((error: any) => {
                       console.error(`failed to check transaction: ${hash}`, error)
                     })
                 })
-                .catch((error) => {
+                .catch((error: any) => {
                   console.error(`failed to check block for hash: ${hash}`, error)
                 })
             } else {
               dispatch(checkedTransaction({ chainId, hash, blockNumber: lastBlockNumber }))
             }
           })
-          .catch((error) => {
+          .catch((error: any) => {
             console.error(`failed to check transaction hash: ${hash}`, error)
           })
       })

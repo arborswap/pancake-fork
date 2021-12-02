@@ -3,7 +3,7 @@ import poolsConfig from 'config/constants/pools'
 import sousChefABI from 'config/abi/sousChef.json'
 import cakeABI from 'config/abi/cake.json'
 import wtlosABI from 'config/abi/weth.json'
-import multicall from 'utils/multicall'
+import { multicall } from 'utils/multicall'
 import { getAddress, getWtlosAddress } from 'utils/addressHelpers'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { getSouschefV2Contract } from 'utils/contractHelpers'
@@ -77,7 +77,7 @@ export const fetchPoolStakingLimit = async (sousId: number): Promise<BigNumber> 
     const sousContract = getSouschefV2Contract(sousId)
     const stakingLimit = await sousContract.poolLimitPerUser()
     return new BigNumber(stakingLimit.toString())
-  } catch (error) {
+  } catch (error: any) {
     return BIG_ZERO
   }
 }

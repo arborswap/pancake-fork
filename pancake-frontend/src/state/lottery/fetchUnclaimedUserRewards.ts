@@ -40,7 +40,7 @@ const fetchCakeRewardsForTickets = async (
       return { ...winningTicket, cakeReward: cakeRewards[index] }
     })
     return { ticketsWithUnclaimedRewards, cakeTotal }
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     return { ticketsWithUnclaimedRewards: null, cakeTotal: null }
   }

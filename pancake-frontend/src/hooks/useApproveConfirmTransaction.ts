@@ -116,7 +116,7 @@ const useApproveConfirmTransaction = ({
           dispatch({ type: 'approve_receipt' })
           onApproveSuccess(state)
         }
-      } catch (error) {
+      } catch (error: any) {
         dispatch({ type: 'approve_error' })
         toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
       }
@@ -130,7 +130,7 @@ const useApproveConfirmTransaction = ({
           dispatch({ type: 'confirm_receipt' })
           onSuccess(state)
         }
-      } catch (error) {
+      } catch (error: any) {
         dispatch({ type: 'confirm_error' })
         toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
       }

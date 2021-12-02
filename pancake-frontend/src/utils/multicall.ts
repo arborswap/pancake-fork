@@ -12,7 +12,7 @@ interface MulticallOptions {
   requireSuccess?: boolean
 }
 
-const multicall = async <T = any>(abi: any[], calls: Call[]): Promise<T> => {
+export const multicall = async <T = any>(abi: any[], calls: Call[]): Promise<T> => {
   try {
     const multi = getMulticallContract()
     const itf = new ethers.utils.Interface(abi)
@@ -23,7 +23,7 @@ const multicall = async <T = any>(abi: any[], calls: Call[]): Promise<T> => {
     const res = returnData.map((call, i) => itf.decodeFunctionResult(calls[i].name, call))
 
     return res
-  } catch (error) {
+  } catch (error: any) {
     throw new Error(error)
   }
 }
@@ -52,5 +52,3 @@ export const multicallv2 = async <T = any>(
 
   return res
 }
-
-export default multicall

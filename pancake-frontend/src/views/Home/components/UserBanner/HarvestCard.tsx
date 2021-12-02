@@ -44,7 +44,7 @@ const HarvestCard = () => {
           `${t('Harvested')}!`,
           t('Your %symbol% earnings have been sent to your wallet!', { symbol: 'CAKE' }),
         )
-      } catch (error) {
+      } catch (error: any) {
         toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
       }
     }

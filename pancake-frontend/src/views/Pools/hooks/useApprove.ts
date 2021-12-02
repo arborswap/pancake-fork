@@ -152,7 +152,7 @@ export const useCheckVaultApprovalStatus = () => {
         const response = await cakeContract.allowance(account, cakeVaultContract.address)
         const currentAllowance = new BigNumber(response.toString())
         setIsVaultApproved(currentAllowance.gt(0))
-      } catch (error) {
+      } catch (error: any) {
         setIsVaultApproved(false)
       }
     }

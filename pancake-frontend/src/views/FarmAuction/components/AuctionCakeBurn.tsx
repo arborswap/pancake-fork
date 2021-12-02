@@ -21,7 +21,7 @@ const AuctionCakeBurn: React.FC = () => {
         const amount = await farmAuctionContract.totalCollected()
         const amountAsBN = ethersToBigNumber(amount)
         setBurnedCakeAmount(getBalanceNumber(amountAsBN))
-      } catch (error) {
+      } catch (error: any) {
         console.error('Failed to fetch burned auction cake', error)
       }
     }

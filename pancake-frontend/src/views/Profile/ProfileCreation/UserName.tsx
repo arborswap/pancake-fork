@@ -130,7 +130,7 @@ const UserName: React.FC = () => {
         const data = await response.json()
         toastError(t('Error'), data?.error?.message)
       }
-    } catch (error) {
+    } catch (error: any) {
       toastError(error?.message ? error.message : JSON.stringify(error))
     } finally {
       setIsLoading(false)
@@ -156,7 +156,7 @@ const UserName: React.FC = () => {
         } else {
           setExistingUserState(ExistingUserState.NEW)
         }
-      } catch (error) {
+      } catch (error: any) {
         toastError(t('Error'), t('Unable to verify username'))
       }
     }

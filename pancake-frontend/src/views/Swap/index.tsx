@@ -186,7 +186,7 @@ export default function Swap({ history }: RouteComponentProps) {
           )
         }
       })
-      .catch((error) => {
+      .catch((error: any) => {
         setSwapState({
           attemptingTxn: false,
           tradeToConfirm,

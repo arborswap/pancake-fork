@@ -110,7 +110,7 @@ const useReclaimAuctionBid = (): [ReclaimableAuction | null, () => void] => {
         if (auctions.length > 0) {
           dispatch({ type: 'setAuctions', payload: { auctions, nextCursor } })
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error('Failed to fetch auctions for bidder', error)
         dispatch({ type: 'setLoading', payload: { loading: false } })
       }
@@ -136,7 +136,7 @@ const useReclaimAuctionBid = (): [ReclaimableAuction | null, () => void] => {
         } else {
           dispatch({ type: 'checkNextAuction' })
         }
-      } catch (error) {
+      } catch (error: any) {
         dispatch({ type: 'setLoading', payload: { loading: false } })
         console.error('Failed to check for unclaim bids', error)
       }

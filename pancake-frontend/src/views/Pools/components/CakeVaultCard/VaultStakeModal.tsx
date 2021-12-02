@@ -131,7 +131,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({ pool, stakingMax, isR
           onDismiss()
           dispatch(fetchCakeVaultUserData({ account }))
         }
-      } catch (error) {
+      } catch (error: any) {
         toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
         setPendingTx(false)
       }
@@ -170,7 +170,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({ pool, stakingMax, isR
           onDismiss()
           dispatch(fetchCakeVaultUserData({ account }))
         }
-      } catch (error) {
+      } catch (error: any) {
         toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
         setPendingTx(false)
       }
@@ -212,7 +212,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({ pool, stakingMax, isR
         onDismiss()
         dispatch(fetchCakeVaultUserData({ account }))
       }
-    } catch (error) {
+    } catch (error: any) {
       toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
       setPendingTx(false)
     }

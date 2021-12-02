@@ -43,7 +43,7 @@ export const getTokenUriData = async (nftAddress: string, tokenId: number) => {
 
     const uriData = await uriDataResponse.json()
     return uriData
-  } catch (error) {
+  } catch (error: any) {
     console.error('getTokenUriData', error)
     return null
   }

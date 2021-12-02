@@ -33,7 +33,7 @@ const useGetProfileCosts = () => {
           numberCakeToRegister: new BigNumber(numberCakeToRegister.toString()),
           numberCakeToUpdate: new BigNumber(numberCakeToUpdate.toString()),
         })
-      } catch (error) {
+      } catch (error: any) {
         toastError(t('Error'), t('Could not retrieve CAKE costs for profile'))
       }
     }

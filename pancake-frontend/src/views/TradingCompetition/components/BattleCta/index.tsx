@@ -85,11 +85,11 @@ const BattleCta: React.FC<CompetitionProps> = ({
                 toastSuccess('EVM account was created successfully!')
               })
             })
-            .catch((error) => {
+            .catch((error: any) => {
               console.error('Error when create eth account from Telos account', error)
               toastError('Something went wrong during the creation of the EVM account.')
             })
-        } catch (error) {
+        } catch (error: any) {
           console.error('Error when create eth account from Telos account: ', error)
         }
       }

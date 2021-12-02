@@ -103,7 +103,7 @@ const getGraphLotteryUser = async (account: string): Promise<LotteryUserGraphEnt
         }),
       }
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error(error)
     user = blankUser
   }

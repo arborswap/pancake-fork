@@ -5,10 +5,10 @@ import { LotteryResponse, LotteryRound, LotteryRoundUserTickets } from 'state/ty
  * Remove the '1' and reverse the digits in a lottery number retreived from the smart contract
  */
 export const parseRetreivedNumber = (number: string): string => {
-  const numberAsArray = number.split('')
-  numberAsArray.splice(0, 1)
-  numberAsArray.reverse()
-  return numberAsArray.join('')
+  const numberAsArray = number?.split('')
+  numberAsArray?.splice(0, 1)
+  numberAsArray?.reverse()
+  return numberAsArray?.join('')
 }
 
 export const getDrawnDate = (endTime: string) => {

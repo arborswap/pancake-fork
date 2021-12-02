@@ -42,7 +42,7 @@ const ConfirmProfileCreationModal: React.FC<Props> = ({
           const response = await cakeContract.allowance(account, profileContract.address)
           const currentAllowance = new BigNumber(response.toString())
           return currentAllowance.gte(minimumCakeRequired)
-        } catch (error) {
+        } catch (error: any) {
           return false
         }
       },

@@ -242,7 +242,7 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
           const response = await cakeContract.allowance(account, lotteryContract.address)
           const currentAllowance = ethersToBigNumber(response)
           return currentAllowance.gt(0)
-        } catch (error) {
+        } catch (error: any) {
           return false
         }
       },
